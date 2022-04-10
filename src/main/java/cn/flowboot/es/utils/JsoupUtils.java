@@ -10,7 +10,7 @@ import java.net.PasswordAuthentication;
 import java.net.Proxy;
 
 /**
- * <h1></h1>
+ * <h1>代理隧道</h1>
  *
  * @version 1.0
  * @author: Vincent Vic
@@ -19,8 +19,8 @@ import java.net.Proxy;
 public class JsoupUtils {
 
     // 代理隧道验证信息
-    final static String ProxyUser = "H01234567890123D";
-    final static String ProxyPass = "0123456789012345";
+    final static String ProxyUser = "ProxyUser";
+    final static String ProxyPass = "ProxyPass";
 
     // 代理服务器
     final static String ProxyHost = "http-dyn.abuyun.com";

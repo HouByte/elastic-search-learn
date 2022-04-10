@@ -33,16 +33,10 @@ public class ContentServiceImpl implements ContentService {
     @Override
     public void captureJdDataAsync(String keyword) {
         try {
-            //"spring", "html","java", "c"
-            List<String> keys = Arrays.asList("python", "bigdata", "hadoop", "mac", "iphone", "mi", "it", "css", "html", "vue", "excel","huawei","one","360","oppo","vivo");
-            for (String key : keys) {
-                log.info("查询 {}",key);
-                Set<Good> goodAll = searchJdGoodUtils.getGoodAll(key);
-                boolean good = elasticSearchService.bulkAddData("good", goodAll);
-                log.info("是否添加成功 {}",good);
-                Thread.sleep(new Random().nextInt(5000)+8000);//休息
-            }
-
+            log.info("查询 {}",keyword);
+            Set<Good> goodAll = searchJdGoodUtils.getGoodAll(keyword);
+            boolean good = elasticSearchService.bulkAddData("good", goodAll);
+            log.info("是否添加成功 {}",good);
         } catch (Exception e) {
             log.info("抓取数据异常：{}",e);
         }

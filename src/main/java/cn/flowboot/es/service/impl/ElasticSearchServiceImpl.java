@@ -2,6 +2,7 @@ package cn.flowboot.es.service.impl;
 
 import cn.flowboot.es.service.ElasticSearchService;
 import com.alibaba.fastjson.JSON;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.bulk.BulkResponse;
@@ -36,15 +37,11 @@ import java.util.concurrent.TimeUnit;
  * @since: 2021/08/24
  */
 @Slf4j
+@RequiredArgsConstructor
 @Service
 public class ElasticSearchServiceImpl<T> implements ElasticSearchService<T> {
 
     private final RestHighLevelClient restHighLevelClient;
-
-    @Autowired
-    public ElasticSearchServiceImpl(RestHighLevelClient restHighLevelClient) {
-        this.restHighLevelClient = restHighLevelClient;
-    }
 
     /**
      * 批量添加数据
